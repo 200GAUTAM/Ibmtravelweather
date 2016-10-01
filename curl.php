@@ -186,12 +186,12 @@ else if((int)$code_json >=28 && (int)$code_json<=31)
                             <!-- Item carousel Boxed-->
 <?php
 
-for ($x = 0; $x <= 10; $x++) {
+for ($x = 0; $x <= 4; $x++) {
     
  ?>
                            <div>
                                 <div class="img-hover">
-                                    <img src="snow_rain/snow<?php echo $x;?>.jpg" alt="" class="img-responsive">
+                                    <img src="summer/cool<?php echo $x;?>.jpg" alt="" class="img-responsive">
                                     
                                 </div>
 
@@ -339,12 +339,12 @@ else if(((int)$code_json >=32 && (int)$code_json<=34) || (int)$code_json ==36)
                             <!-- Item carousel Boxed-->
 <?php
 
-for ($x = 0; $x <= 10; $x++) {
+for ($x = 0; $x <= 4; $x++) {
     
  ?>
                            <div>
                                 <div class="img-hover">
-                                    <img src="snow_rain/snow<?php echo $x;?>.jpg" alt="" class="img-responsive">
+                                    <img src="summer/cool<?php echo $x;?>.jpg" alt="" class="img-responsive">
                                     <div class="overlay"><a href="img/gallery-2/1.jpg" class="fancybox"><i class="fa fa-plus-circle"></i></a></div>
                                 </div>
 

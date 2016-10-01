@@ -1,7 +1,3 @@
-<?php
-session_start();
-?>
-<!DOCTYPE html>
 <html lang="en">
     <head>
         <!-- Basic -->
@@ -159,33 +155,19 @@ session_start();
                 <div class="filter-title">
                     <!-- TITLE HEADER-->
                     <div class="title-header">
-                        <h1>#Digital WordRobe</h1>
-                        <p class="lead">Finds what to carry along ....!</p>
-			 <p class="lead">Don't have any place in mind let us <a href="photo.html">recommend</a> </p>
+                        <h1>#oho seems confused ...</h1>
+                        <p class="lead">Try these places out</p>
                     </div>
                     <!-- END TITLE HEADER-->
 
                     <!-- FILTER HEADER-->
-		<div id="form-content">
-                    <div class="filter-header">
-                        <form  id="kl" method = "post">
-                            <input type="text" required="required" placeholder="Where do you want to go?" class="input-large" name ="city" id="autocomplete" onFocus="geolocate()">
-                            <input type="text" required="required" placeholder="Check In" class="date-input" id="lat" name="x">
-                            <input type="text" required="required" placeholder="Check Out" class="date-input" id="lng" name="y">
-                            <div class="selector">
-                                <select class="guests-input" name="offset">
-                                    <option value="1">only 6 day prediction</option>
-                                    <option value="3">3rd day from now</option>
-                                    <option value="4">4th day from now</option>
-                                    <option value="5">5th day from now</option>
-                                    <option value="6">6th day from now</option>
-                                </select>
-                                <span class="custom-select">i'll be there </span>
-                            </div>
-                            <input type="submit" name="submit">
-                        </form>
-                    </div>
-</div>
+		
+                    <div class="title-header">
+                      <h3>#dominoz</h3>
+		      <h3>#pizzahut</h3>
+		 <h3>#why not go watch dhoni?</h3>
+</div>		
+                    
                     <!-- END FILTER HEADER-->
                 </div>
                 <!-- END FILTERHEADER - TITLE HEADER -->
@@ -235,123 +217,7 @@ session_start();
                 </div>
 <div id="new-content">
 </div>
-<?php
-if(isset($_SESSION['x']) && isset($_SESSION['y']))
-{
-
-
-}
-               
-
-?>            
-        </div>
-        <!-- End layout-->
-	<script type="text/javascript">
-$(document).ready(function() {	
-	
-	// submit form using $.ajax() method
-	
-	$('#kl').submit(function(e){
-		
-		e.preventDefault(); // Prevent Default Submission
-		
-		$.ajax({
-			url: 'curl.php',
-			type: 'POST',
-			data: $(this).serialize() // it will serialize the form data
-		})
-		.done(function(data){
-			$('#new-content').fadeIn('slow').html(data);
-			
-		})
-		.fail(function(){
-			alert('Ajax Submit Failed ...');	
-		});
-	});
-	
-});
-</script>
-	<script>
-		    var placeSearch, autocomplete;
-      var componentForm = {
-        street_number: 'short_name',
-        route: 'long_name',
-        locality: 'long_name',
-        administrative_area_level_1: 'short_name',
-        country: 'long_name',
-        postal_code: 'short_name'
-      };
-
-      function initAutocomplete() {
-        // Create the autocomplete object, restricting the search to geographical
-        // location types.
-        autocomplete = new google.maps.places.Autocomplete(
-            /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
-            {types: ['geocode']});
-
-        // When the user selects an address from the dropdown, populate the address
-        // fields in the form.
-        autocomplete.addListener('place_changed', fillInAddress);
-      }
-
-      function fillInAddress() {
-        // Get the place details from the autocomplete object.
-        var place = autocomplete.getPlace();
-
-       
-        // Get each component of the address from the place details
-        // and fill the corresponding field on the form.
-        
-	document.getElementById('lat').value =  place.geometry.location.lat();
-	document.getElementById('lng').value =  place.geometry.location.lng();
-      }
-	
-
-      // Bias the autocomplete object to the user's geographical location,
-      // as supplied by the browser's 'navigator.geolocation' object.
-      function geolocate() {
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            var geolocation = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
-            var circle = new google.maps.Circle({
-              center: geolocation,
-              radius: position.coords.accuracy
-            });
-            autocomplete.setBounds(circle.getBounds());
-          });
-        }
-      }
-
-	</script>
-
-<script type="text/javascript">
-
-Dropzone.options.myAwesomeDropzone = {
-		  maxFilesize: 20, // Size in MB
-		  addRemoveLinks: true,
-		    removedfile: function(file) { 
-		      var fileRef;
-		      return (fileRef = file.previewElement) != null ? 
-				      fileRef.parentNode.removeChild(file.previewElement) : void 0;
-		    },
-
-	success: function(file, response) {
-		    	  alert(response);
-		    	},
-
-	error: function(file, response) {
-			    	  alert(response);
-			    }
-	    	
-};
-
-
-
-</script>
-
+</div>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC_tVR1Lfkd_FXAdo2-YKWh-JaQG-aHt0E&libraries=places&callback=initAutocomplete"
         async defer></script>
         <!-- ======================= JQuery libs =========================== -->

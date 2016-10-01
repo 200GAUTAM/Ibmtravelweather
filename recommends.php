@@ -36,30 +36,29 @@ curl_setopt_array($curl, array(
 // Send the request & save response to $resp
 $resp = curl_exec($curl);
 $l = json_decode($resp ,true);
-print_r(l);
 $smiling =  $l['face']['0']['attribute']['smiling']['value'];
 $_SESSION['smiling'] = $smiling;
 if( $smiling>0 && $smiling<20 )
 {
-	header("Refresh: 5; URL='trips1.php'");
+	header("Refresh: 5; URL='trips1.html'");
 }
 else if($smiling>20 && $smiling<40)
 {
 	
-header("Refresh: 5; URL='trips2.php'");
+header("Refresh: 5; URL='trips1.html'");
 }
 else if($smiling>40 && $smiling<60)
 {
-	header("Refresh: 5; URL='trips3.php'");
+	header("Refresh: 5; URL='trips2.html'");
 }
 else if($smiling>60 && $smiling<80)
 {
-	header("Refresh: 5; URL='trips4.php'");
+	header("Refresh: 5; URL='trips2.html'");
 }
 else if ($smiling>80 && $smiling<100)
 {
 	echo "you are quite energetic";
-	header("Refresh: 5; URL='trips5.php'");
+	header("Refresh: 5; URL='trips2.html'");
 }
 else {
 	"watch tv";
