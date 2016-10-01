@@ -1,5 +1,5 @@
 <?php
-echo "hello world";
+
 ?>
 <html>
 	<head>
@@ -10,9 +10,17 @@ echo "hello world";
 	<body>
 <div id="form-content">
 		<form  id="kl">
-		lat:<input type = "text" id="lat">
-		lon:<input type ="text" id="lng">
-		city<input type="text" name ="city" id="autocomplete" onFocus="geolocate()">
+		<input type = "hidden" id="lat" name="x">
+		<input type ="hidden" id="lng" name="y">
+		city:<input type="text" name ="city" id="autocomplete" onFocus="geolocate()">
+		You will be there <select name="duration">
+				<option>There by tom</option>
+				<option>With in two days</option>
+				<option>With in 4 days</option>
+				<option>With in 6 days</option>
+				<option>With in 8 days</option>
+				<option>With in 10 days</option>
+			</select>			
 		<input type="submit"  name="submit" >
 		</form>
 </div>
